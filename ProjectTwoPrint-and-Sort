@@ -1,0 +1,27 @@
+**** THE SORTING FUNCTION CODE ****
+
+void printCourseList(vector<Course> courses) {
+    sort(courses.begin(), courses.end(), [](Course a, Course b) {
+        return a.courseNumber < b.courseNumber;
+    });
+
+    cout << endl;
+    cout << "Here is a sample schedule:" << endl;
+
+    for (Course course : courses) {
+        cout << course.courseNumber << ", " << course.courseTitle << endl;
+    }
+}
+
+
+
+**** THE MENU CODE THAT CALLS IT ****
+
+case 2:
+    if (courses.empty()) {
+        cout << "Please load the course data first." << endl;
+    }
+    else {
+        printCourseList(courses);
+    }
+    break;
